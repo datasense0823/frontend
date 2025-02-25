@@ -1,0 +1,22 @@
+name: deployment
+on: [push]
+
+jobs:
+    deploy_application:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+            
+            - name: Install Dependencies
+              run: npm run ci 
+
+            - name: Run Lint
+              run: npm run lint
+
+            - name: Run Test
+              run: npm run test
+
+            - name: Run Build
+              run: npm run build 
+
