@@ -1,0 +1,16 @@
+name: Context
+on: issues
+
+jobs:
+    Context_check:
+        runs-on: macos-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v4
+
+            - name: Run Context
+              uses: echo "${{ toJSON(github.event) }}"
+
+            
+
+            
