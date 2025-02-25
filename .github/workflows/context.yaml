@@ -9,7 +9,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Run Context
-              uses: echo "${{ toJSON(github.event) }}"
+              run: echo "${{ toJSON(github.event) }}"
 
             
 
